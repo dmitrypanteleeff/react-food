@@ -11,3 +11,146 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  padding: 0 1rem;
+}
+
+.content {
+  min-height: calc(100vh - 70px - 64px);
+  padding: 1.5rem 0;
+}
+
+.goods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card .card-content {
+  flex-grow: 1;
+}
+
+.card .card-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  cursor: pointer;
+  z-index: 5;
+  padding: 1rem;
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+
+  width: 50rem;
+  max-width: 95%;
+}
+
+.secondary-content {
+  cursor: pointer;
+}
+
+.product-item-row__wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.product-item-row-2,
+.product-item-row {
+  display: flex;
+}
+
+.product-item-name {
+  width: 400px;
+  border: 1px solid red;
+}
+
+.my-toast-container {
+  top: 8rem !important;
+  right: 3rem !important;
+  animation: fade-in 250ms ease-in-out;
+}
+
+.toast {
+  width: 200px !important;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 992px) {
+  #toast-container {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+
+    position: sticky;
+    height: 10px;
+    margin-left: auto;
+  }
+
+  .toast {
+    right: -30px;
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 767px) {
+  .toast {
+    margin-bottom: 80px;
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  #toast-container {
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+  }
+  .toast {
+    margin-bottom: 130px;
+    margin-right: -15px;
+  }
+}
+
+@media (max-width:575px) {
+  .product-item-name {
+    width: 210px;
+  }
+}
+
+@media (min-width:767px) {
+  .cart {
+    top: 6.2rem;
+    bottom: unset;
+    right: 3rem;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+}
+
+
