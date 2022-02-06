@@ -1,18 +1,47 @@
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Shop } from './components/Shop';
-import { Context } from './components/Context.jsx';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import { About } from './pages/About';
+import { Contact } from './pages/Contact';
+import { Home } from './pages/Home';
+import { NotFound } from './pages/NotFound';
+import { Movies } from './pages/Movie';
+import { Category } from './pages/Category';
+import { Dish } from './pages/Dish';
+
+// import { Link } from 'react-router-dom';
+
+
 //require('dotenv').config()
 
 function App() {
   return (
-    <Context>
       <div className="App">
-        <Header />
-          <Shop />
-        <Footer />
+      <Router basename='/react-food'>
+      <Header />
+        <main className='container content'>
+          
+        
+          <Routes>
+              
+            <Route exact path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/contacts' element={<Contact />} />
+            <Route path='/category/:name' element={<Category />} />
+            <Route path='/meal/:id' element={<Dish />} />
+            <Route path='*' element={<NotFound />} />
+        
+          </Routes>
+        
+        
+          
+        </main>
+        <Footer />  
+        </Router>
       </div>
-    </Context>
+    
   );
 }
 
